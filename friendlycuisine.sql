@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2019 at 03:14 AM
+-- Generation Time: Nov 07, 2019 at 04:53 PM
 -- Server version: 5.6.37
 -- PHP Version: 5.6.31
 
@@ -19,22 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `friendlycuisine`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `Event`
---
-
-CREATE TABLE IF NOT EXISTS `Event` (
-  `eventID` int(11) NOT NULL,
-  `eventName` varchar(50) NOT NULL,
-  `eventDesc` varchar(500) NOT NULL,
-  `eventDate` varchar(50) NOT NULL,
-  `eventLocation` varchar(50) NOT NULL,
-  `eventImage` varchar(100) NOT NULL,
-  `userID` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -121,7 +105,7 @@ CREATE TABLE IF NOT EXISTS `User` (
   `userUsername` varchar(50) NOT NULL,
   `userPassword` varchar(50) NOT NULL,
   `userLastActive` datetime(4) NOT NULL,
-  `userShowStatus` tinyint(4) NOT NULL,
+  `userShowStatus` varchar(10) NOT NULL,
   `userAllowMessage` tinyint(4) NOT NULL,
   `userProfanityFilter` tinyint(4) NOT NULL,
   `userDisabled` tinyint(4) NOT NULL,
@@ -129,18 +113,13 @@ CREATE TABLE IF NOT EXISTS `User` (
   `userProfileImage` varchar(100) NOT NULL,
   `userPhone` varchar(50) NOT NULL,
   `userWork` varchar(50) NOT NULL,
-  `userBirthday` varchar(50) NOT NULL
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+  `userBirthday` varchar(50) NOT NULL,
+  `userDesc` varchar(500) NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `Event`
---
-ALTER TABLE `Event`
-  ADD PRIMARY KEY (`eventID`);
 
 --
 -- Indexes for table `Friend`
@@ -183,11 +162,6 @@ ALTER TABLE `User`
 --
 
 --
--- AUTO_INCREMENT for table `Event`
---
-ALTER TABLE `Event`
-  MODIFY `eventID` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `Friend`
 --
 ALTER TABLE `Friend`
@@ -216,7 +190,7 @@ ALTER TABLE `Restaurant`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
